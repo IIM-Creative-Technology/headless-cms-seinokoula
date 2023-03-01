@@ -11,5 +11,6 @@
     "@nuxtjs/strapi": "^1.8.1",
     "@types/node": "^18.14.2",
     "nuxt": "^3.2.3"
-  }
+  },
+  "dependencies": {}
 }

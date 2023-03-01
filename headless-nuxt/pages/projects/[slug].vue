@@ -1,5 +1,4 @@
 <template>
-    <NuxtLink to="/">Home</NuxtLink>
     <div v-if="project">
         <p> url single : {{ $route.params.slug }}</p>
         <br>
@@ -9,6 +8,7 @@
         <p v-for="technology in project.technologies" :key="technology.id">techno utilisée : {{ technology.techno }}</p>
         <p v-for="type_of_projects in project.type_of_projects" :key="type_of_projects.id">type de projet : {{ type_of_projects.sections }}</p>
         <p><a :href="project.link" target="_blank">Link to project</a></p>
+        <!-- display the map of technologies -->
     </div>
 </template>
 
@@ -17,19 +17,23 @@ const { findOne } = useStrapi()
 const route = useRoute()
 const project = ref()
 
+// const technologies = computed(() => {
+//     return project.value.technologies.map(technology => technology.techno)
+// })
+
+// console.log('lola',technologies)
+
 onMounted(async () => {
     project.value = await findOne(`projects?filters[slug]=${route.params.slug}&populate=deep`)
     project.value = project.value.data[0]
     console.log(project.value)
 })
-// make a script to filter with the relation of the project and the technology
+
 
 </script>
 
 <style scoped>
 div {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;

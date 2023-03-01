@@ -28,5 +28,10 @@ module.exports = ({ env }) => ({
             },
         },
     },
-    
+    ckeditor: {
+        enabled: true,
+        config: {
+            plugin: {},
+        },
+    },
 });
