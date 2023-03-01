@@ -1,20 +1,23 @@
 <template>
+    <div class="title">
+    <h1>Portfolio</h1>
+    <p>Bonjour à tous, je m’appelle Alexandre Charles, Web Développeur en devenir.</p>
+    <p>Vous pouvez voir tous mes talents de CSS à l'œuvre sur mon portfolio même </p>
+    </div>
     <div class="container">
         <div class="card" v-if="projects">
-            <button @click="filterProjects('all')">
-                reset
-            </button>
-            <button v-for="type in types" @click="filterProjects(type)">
-                {{ type }}
-            </button>
-            <NuxtLink :to="`/projects/${project.slug}`" v-for="project in filteredProjects">
-                <h3>{{ project.name }}</h3>
-                <p v-for="technology in project.technologies" :key="technology.id">techno utilisée : {{ technology.techno }}
-                </p>
-                <p v-for="type_of_projects in project.type_of_projects" :key="type_of_projects.id">type de projet : {{
-                    type_of_projects.sections }}</p>
-                <img :src="project.image.url" :alt="project.image.alternativeText" />
-            </NuxtLink>
+            <button @click="filterProjects('all')">reset</button>
+            <button v-for="type in types" @click="filterProjects(type)">{{ type }}</button>
+            <div v-for="project in filteredProjects" :key="project.slug" class="card">
+                <NuxtLink :to="`/projects/${project.slug}`">
+                    <h3>{{ project.name }}</h3>
+                    <p v-for="technology in project.technologies" :key="technology.id">techno utilisée : {{
+                        technology.techno }}</p>
+                    <p v-for="type_of_projects in project.type_of_projects" :key="type_of_projects.id">type de projet : {{
+                        type_of_projects.sections }}</p>
+                    <img :src="project.image.url" :alt="project.image.alternativeText" />
+                </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
@@ -50,28 +53,35 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-
-.container{
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    background-color: #f5f5f5;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 50%;
 }
 
 .card {
-    border: 2px solid #c75ac4;
-    text-align: center;
-    padding: 1rem;
-
+    width: 100%;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3,
+.card p {
+    margin: 10px;
 }
 </style>
+
