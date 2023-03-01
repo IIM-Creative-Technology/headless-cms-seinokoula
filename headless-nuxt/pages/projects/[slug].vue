@@ -35,40 +35,51 @@ onMounted(async () => {
 
 <style scoped>
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    margin-bottom: 2rem;
-    width: 50%;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 img {
-    max-width: 50%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: auto;
-    margin-bottom: 2rem;
+  max-width: 500PX;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 5px;
 }
 
 p {
-    margin-bottom: 10px;
-    border: 1px solid black;
-    /* align the text to the left */
-    text-align: left;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  /* align the text to the left */
+  text-align: left;
 }
 
 a {
-    color: blue;
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
 }
+
+a:hover {
+  color: #283593;
+  transform: scale(1.05);
+}
+
 </style>

@@ -12,5 +12,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Red Hat Display', sans-serif;
+  text-decoration: none;
+  color: #222;
 }
 </style>

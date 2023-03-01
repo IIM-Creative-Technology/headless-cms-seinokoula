@@ -21,9 +21,6 @@ header {
     text-align: center;
     font-size: 1.4rem;
     font-weight: 700;
-    /* top: 0;
-    position: fixed;
-    width: 100%; */
 }
 
 nav ul {
