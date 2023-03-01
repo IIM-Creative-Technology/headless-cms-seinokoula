@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_of_projects",
+  "info": {
+    "singularName": "type-of-project",
+    "pluralName": "type-of-projects",
+    "displayName": "type of project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "string"
+    }
+  }
+}
