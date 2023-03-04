@@ -19,6 +19,3 @@ Ce projet est un exemple d'application web créée avec le framework JavaScript 
 2. Lancez l'application en mode développement (Nuxt) : `yarn dev`
 3. Lancez l'application Strapi en mode développement : `yarn develop`
 
-## Déploiement
-
-Le site est déployé sur Vercel et accessible à l'adresse suivante : <https://nuxt-strapi-a3.vercel.app/>
