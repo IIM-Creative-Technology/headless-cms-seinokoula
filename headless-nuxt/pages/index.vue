@@ -113,11 +113,13 @@ button.active {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    display: flex; /* add this */
-    justify-content: center; /* add this */
+    display: flex;
+    /* add this */
+    justify-content: center;
+    /* add this */
 }
 
-.card button{
+.card button {
     align-self: center;
 }
 

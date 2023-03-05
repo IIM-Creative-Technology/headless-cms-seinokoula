@@ -1,16 +1,17 @@
 <template>
-    <div class="container" v-if="project">
-        <div class="card">
-        <p> url single : {{ $route.params.slug }}</p>
-        <br>
-        <img :src="project.image.url" :alt="project.image.alternativeText" />
-        <p>nom du projet : {{ project.name }}</p>
-        <p>description du projet : {{ project.description }}</p>
-        <p v-for="technology in project.technologies" :key="technology.id">techno utilisée : {{ technology.techno }}</p>
-        <p v-for="type_of_projects in project.type_of_projects" :key="type_of_projects.id">type de projet : {{ type_of_projects.sections }}</p>
-        <p><a :href="project.link" target="_blank">Link to project</a></p>
-        </div>
+  <div class="container" v-if="project">
+    <div class="card">
+      <p> url single : {{ $route.params.slug }}</p>
+      <br>
+      <img :src="project.image.url" :alt="project.image.alternativeText" />
+      <p>nom du projet : {{ project.name }}</p>
+      <p>description du projet : {{ project.description }}</p>
+      <p v-for="technology in project.technologies" :key="technology.id">techno utilisée : {{ technology.techno }}</p>
+      <p v-for="type_of_projects in project.type_of_projects" :key="type_of_projects.id">type de projet : {{
+        type_of_projects.sections }}</p>
+      <p><a :href="project.link" target="_blank">Link to project</a></p>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,16 +19,10 @@ const { findOne } = useStrapi()
 const route = useRoute()
 const project = ref()
 
-// const technologies = computed(() => {
-//     return project.value.technologies.map(technology => technology.techno)
-// })
-
-// console.log('lola',technologies)
-
 onMounted(async () => {
-    project.value = await findOne(`projects?filters[slug]=${route.params.slug}&populate=deep`)
-    project.value = project.value.data[0]
-    console.log(project.value)
+  project.value = await findOne(`projects?filters[slug]=${route.params.slug}&populate=deep`)
+  project.value = project.value.data[0]
+  console.log(project.value)
 })
 
 
@@ -81,5 +76,4 @@ a:hover {
   color: #283593;
   transform: scale(1.05);
 }
-
 </style>
